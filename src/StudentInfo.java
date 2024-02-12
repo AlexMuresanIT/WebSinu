@@ -25,9 +25,21 @@ public class StudentInfo extends Student{
         this.county=county;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public String getCounty() {
+        return county;
+    }
+
     @Override
     public String toString() {
-        return "[%d]: %s, %s, %s, %s".formatted(id,getStudentName(),address,town,county);
+        return "%s, %s, %s, %s".formatted(getStudentName(),address,town,county);
     }
 
 

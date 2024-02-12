@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class Faculty {
@@ -40,6 +43,25 @@ public class Faculty {
             printCourses(list.get(k));
             System.out.println("-".repeat(30));
         }
+        System.out.println("-".repeat(30));
+
+
+    }
+
+    private static void updateInfo(List<StudentInfo> students){
+
+        System.out.println("Added the students to the file.");
+        try(PrintWriter writer = new PrintWriter("Students.txt")){
+            for(var s:students){
+                writer.printf("%-15s%-12s%-10s%-10s",
+                        s.getStudentName()+",",s.getAddress()+",",
+                        s.getTown()+",",s.getCounty());
+                writer.println();
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void printCourses(List<Course> courses){
@@ -56,6 +78,7 @@ public class Faculty {
         for(var s:students){
             System.out.println(s);
         }
+        updateInfo(students);
     }
 
     public static Map<String,List<Course>> addNewStudent(Map<String,List<Course>> list, String name, String address,
@@ -65,6 +88,7 @@ public class Faculty {
         list.put(name,coursesList);
         return list;
     }
+
 
     public static Map<String,List<Course>> deleteStudent(Map<String,List<Course>> list, String name, List<StudentInfo> studentEnrolled){
 

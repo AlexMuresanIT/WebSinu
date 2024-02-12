@@ -1,30 +1,29 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class StudentData {
 
-    private static final String students = """
-                                Alexandru Muresan, Str. Turda nr.4, Medias, Sibiu
-                                Elina Barabas, Str. Morii nr.28, Suceava, Suceava
-                                Amal Chamlee, Str. Fabricii de Zahar nr. 2, Orsova, Severin
-                                Corinna Joines, Str. Popescu Leordan nr. 29, Targu-Mures, Mures
-                                Paul Adam, Str. Garsde nr. 330, Medias, Sibiu
-                                Daria Andrioaie, Str. Umpalumpa nr. 54, Onesti, Bacau
-                                Alex Albu, Str. Omilia nr. 34, Abrud, Alba
-                                Bianca Corches, Str. Turzeni nr. 9, Bistra, Alba
-                                """;
-
     public static void getStudentData(Map<String, List<Course>> studentInfo,List<StudentInfo> studentsInfo){
 
-        for(String s: students.split("\\R")){
-            String[] data = s.split(",");
-            StudentInfo student = new StudentInfo(data[0],data[1],data[2],data[3]);
-            Arrays.asList(data).replaceAll(String::trim);
-            studentsInfo.add(student);
-            List<Course> studentCourse = CourseData.getCourseData();
-            studentInfo.put(data[0],studentCourse);
-
+        try(BufferedReader buffer = new BufferedReader(new FileReader("Students.txt"))){
+            String line = buffer.readLine();
+            while(line!=null){
+                String[] data = line.split(",");
+                StudentInfo student = new StudentInfo(data[0],data[1],data[2],data[3]);
+                Arrays.asList(data).replaceAll(String::trim);
+                studentsInfo.add(student);
+                List<Course> studentCourse = CourseData.getCourseData();
+                studentInfo.put(data[0],studentCourse);
+                line = buffer.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
     }
 
     public static List<Course> addStudent(List<StudentInfo> studentInfos, String name, String address, String town, String county){
