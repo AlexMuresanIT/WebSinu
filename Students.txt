@@ -1,9 +1,8 @@
-Alexandru Muresan, Str. Turda nr.4, Medias,       Sibiu    
-Elina Barabas,    Str. Morii nr.28, Suceava,    Suceava  
-Amal Chamlee,       Str. Fabricii de Zahar nr. 2, Orsova,       Severin  
-Corinna Joines, Str. Popescu Leordan nr. 29, Targu-Mures, Mures    
-Paul Adam,                Str. Garsde nr. 330, Medias,       Sibiu    
-Daria Andrioaie, Str. Umpalumpa nr. 54, Onesti,       Bacau    
-Alex Albu,                Str. Omilia nr. 34, Abrud,          Alba     
-Bianca Corches, Str. Turzeni nr. 9, Bistra,       Alba     
-Darius Macavei,Sos. Sibiului nr. 7,Medias,      Sibiu     
+Alexandru Muresan, Str. Turda nr.4,              Medias,        Sibiu    
+Elina Barabas,     Str. Morii nr.28,             Suceava,       Suceava  
+Amal Chamlee,      Str. Fabricii de Zahar nr. 2, Orsova,        Severin  
+Corinna Joines,    Str. Popescu Leordan nr. 29,  Targu-Mures,   Mures    
+Paul Adam,         Str. Garsde nr. 330,          Medias,        Sibiu    
+Daria Andrioaie,   Str. Umpalumpa nr. 54,        Onesti,        Bacau    
+Alex Albu,         Str. Omilia nr. 34,           Abrud,         Alba     
+Bianca Corches,    Str. Turzeni nr. 9,           Bistra,        Alba     

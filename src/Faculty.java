@@ -53,7 +53,7 @@ public class Faculty {
         System.out.println("Added the students to the file.");
         try(PrintWriter writer = new PrintWriter("Students.txt")){
             for(var s:students){
-                writer.printf("%-15s%-12s%-10s%-10s",
+                writer.printf("%-18s%-30s%-15s%-10s",
                         s.getStudentName()+",",s.getAddress()+",",
                         s.getTown()+",",s.getCounty());
                 writer.println();
